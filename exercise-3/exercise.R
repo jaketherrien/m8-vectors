@@ -17,14 +17,22 @@ MarbleGame <- function(guess) {
   } else {
     return(paste("You were wrong, the color was ", actual))
   }
-  
 }
 
 # Play the marble game!
 MarbleGame("Blue")
 MarbleGame("Red")
 # Bonus: Play the marble game until you win, keeping track of how many tries you take
-
+MarbleGame2 <- function(guess) {
+  actual <- sample(marbles, 1)
+  n <- 1
+  while (guess != actual) {
+    actual <- sample(marbles, 1)
+    n <- n + 1
+  }
+  return (n)
+}
+MarbleGame2("Blue")
 
 ## Double bonus(answer not provided): play the game 1000X (until you win) and track the average number of tries
 # Is it what you expected based on the probability
